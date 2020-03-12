@@ -21,26 +21,62 @@
             color: blue;
             font-weight: bold;
         }
+        .but {text-align: center; margin: 10px;}
+
     </style>
     <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="wrap">
-    <div class="card" style="width: 18rem;">
+    <div class="card" >
         <img class="card-img-top" width="100%"
             src="http://postfiles7.naver.net/20100117_6/chokyungik_1263723717930JkHnS_jpg/monopoly_game_chokyungik.jpg?type=w3"
-           
+            width="200px" height="400px" 
             id="20100117_6/chokyungik_1263723717930JkHnS_jpg/monopoly_game_chokyungik.jpg"
             onclick="popview(this, '90000003_0000000000000004ADF0D1A7')" alt="" class="_photoImage" data-lazy-src="">
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h3 class="card-title">보드게임 팝니다</h3> <p>가격 20,000원/개</p>
+            <p class="card-text">가족 혹은 친구들과 즐거운 시간을 보낼 수 있습니다.</p>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">주문자이름</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              
+              
+            
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">수량</span>
+                </div>
+                <select class="form-control">
+                    <option>--수량을 선택하세요--</option>
+                  </select>
+            </select>
+              </div>
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">주소</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+
+              </div>
+              
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">전화번호</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+              </div>
+            <div class="but">
+              <a href="#" class="btn btn-primary">주문하기</a>
+            </div>
         </div>
     </div>
-</div>
+    </div>
 </body>
 
 </html>
