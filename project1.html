@@ -26,7 +26,8 @@
 
 
 
-
+        /* 학습용 */
+        /*body, div, img, a, h3, p{border:1px solid red;}*/
         h3{width:200px;display:inline;}
         .card-title{widht:150px;display:inline;}
         .card-price{display:inline;}
@@ -51,7 +52,10 @@
             id="20100117_6/chokyungik_1263723717930JkHnS_jpg/monopoly_game_chokyungik.jpg"
             onclick="popview(this, '90000003_0000000000000004ADF0D1A7')" alt="" class="_photoImage" data-lazy-src="">
         <div class="card-body">
-
+            <!--
+            <span class="tit">보드게임 팝니다</span>
+            <span class="price">가격 20,000원/개</span>
+            -->
             <h3 class="card-title">보드게임 팝니다</h3> 
             <p class="card-price">가격 20,000원/개</p>
             <p class="card-text">가족 혹은 친구들과 즐거운 시간을 보낼 수 있습니다.</p>
@@ -68,7 +72,16 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon3">수량</span>
                 </div>
-
+                <!--
+                <input  type="number" placeholder="--수량을 입력하세요--">
+                -->
+                <!--
+                <select class="form-control">
+                    <option>--수량을 선택하세요--</option>
+                    <option value="1">1</option>
+                    <option value="2"> 2</option>
+                </select>
+                -->
                 <input class="form-control" type="number" placeholder="--수량을 입력하세요--">
                 
               </div>
