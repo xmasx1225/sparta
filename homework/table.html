@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function addRow() {
+            var myName = document.getElementById("name");
+            var age = document.getElementById("age");
+            var table = document.getElementById("myTableData");
+
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+            row.insertCell(0).innerHTML = myName.value;
+            row.insertCell(1).innerHTML = age.value;
+            row.insertCell(2).innerHTML = aaa.value;
+            row.insertCell(3).innerHTML = bbb.value;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="myform">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="text" id="age">
+                    <input type="button" id="add" value="Add" onclick="Javascript:addRow()"></td>
+            </tr>
+   
+        </table>
+    </div>
+    <div id="mydata">
+        <table id="myTableData">
+            <tr>
+                <td><b>이름</b></td>
+                <td><b>수량</b></td>
+                <td><b>주소</b></td>
+                <td><b>전화번호</b></td>
+            </tr>
+        </table>
+        &nbsp;
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .wrap {
+            width: 900px;
+            margin: 0px auto 0px auto
+        }
+
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .but {
+            text-align: center;
+            margin: 10px;
+        }
+        .wrap {
+            width: 500px;
+        }
+
+        .tit {
+            font-size: 45px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <script>
+        function inform() {
+            let name = $('#buy-name').val();
+            let count = $('#buy-count').val();
+            let ads = $('#buy-add').val();
+            let call = $('#buy-call').val();
+            let check = /^\d{3}-\d{4}-\d{4}$/;
+
+            if (name == '') {
+                alert("이름을 입력해주세요");
+                $('#buy-name').focus();
+                return
+            } else if (count == 0) {
+                alert("수량을 선택하세요");
+                ('#buy-count').focus();
+                return
+            } else if (ads == '') {
+                alert("주소를 입력해주세요");
+                $('#buy-add').focus();
+                return
+            } else if (call == '') {
+                alert("전화번호를 입력해주세요");
+                $('#buy-call').focus();
+                return
+            } else if (!check.call) {
+                alert("010-0000-0000형식으로 입력해주세요");
+                $('#buy-call').focus();
+            }
+        }
+
+        function addRow() {
+            let name = $('#buy-name');
+            let count = $('#buy-count');
+            let ads = $('#buy-add');
+            let call = $('#buy-call');
+            
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+
+            row.insertCell(0).innerHTML = name.value;
+            row.insertCell(1).innerHTML = count.value;
+            row.insertCell(2).innerHTML = ads.value;
+            row.insertCell(3).innerHTML = call.value;
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card">
+            <img class="card-img-top" width="100%"
+                src="http://postfiles7.naver.net/20100117_6/chokyungik_1263723717930JkHnS_jpg/monopoly_game_chokyungik.jpg?type=w3"
+                width="200px" height="400px"
+                id="20100117_6/chokyungik_1263723717930JkHnS_jpg/monopoly_game_chokyungik.jpg"
+                onclick="popview(this, '90000003_0000000000000004ADF0D1A7')" alt="" class="_photoImage"
+                data-lazy-src="">
+            <div class="card-body">
+
+                <span class="tit">보드게임 팝니다</span>
+                <span class="price">가격 20,000원/개</span>
+                <p class="card-text">가족 혹은 친구들과 즐거운 시간을 보낼 수 있습니다.</p>
+
+                <table>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">주문자이름</span>
+                                </div>
+
+                                <input type="text" id="buy-name" class="form-control" aria-label="Username">
+                        </td>
+                    </tr>
+
+            </div>
+
+            <tr>
+                <td>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">수량</span>
+                        </div>
+
+                        <select class="form-control" id="buy-count">
+                            <option value="">--수량을 선택하세요--</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">주소</span>
+                        </div>
+                        <input type="text" id="buy-add" class="form-control" aria-label="Address">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">전화번호</span>
+                        </div>
+                        <input type="tel" class="form-control" id="buy-call"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+
+                    </div>
+                </td>
+            </tr>
+
+            </table>
+
+            <div class="but">
+                <button type=button class="btn btn-primary" onclick="inform(); addRow();">주문하기</button>
+            </div>
+
+            <div id="mydata">
+                <table id="myTableData">
+                    <tr>
+                        <td><b>이름</b></td>
+                        <td><b>수량</b></td>
+                        <td><b>주소</b></td>
+                        <td><b>전화번호</b></td>
+                    </tr>
+                </table>
+                &nbsp;
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
