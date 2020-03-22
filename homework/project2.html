@@ -44,38 +44,42 @@
             let count = $('#buy-count').val();
             let ads = $('#buy-add').val();
             let call = $('#buy-call').val();
-            let check = /^\d{3}-\d{4}-\d{4}$/;
+            let check = /^010-[0-9]{4}-[0-9]{4}$/;
 
             if (name == '') {
                 alert("이름을 입력해주세요");
                 $('#buy-name').focus();
-                return
+                return;
             } else if (count == 0) {
                 alert("수량을 선택하세요");
-                ('#buy-count').focus();
-                return
+                $('#buy-count').focus();
+                return;
             } else if (ads == '') {
                 alert("주소를 입력해주세요");
                 $('#buy-add').focus();
-                return
+                return;
             } else if (call == '') {
                 alert("전화번호를 입력해주세요");
                 $('#buy-call').focus();
-                return
+                return;
             } else if (!check.test(call)) {
                 alert("010-0000-0000형식으로 입력해주세요");
                 $('#buy-call').focus();
+                return;
             }
+
+            testList();
         }
-        function TestList() {
+
+        function testList() {
             let name = $('#buy-name').val();
             let count = $('#buy-count').val();
             let ads = $('#buy-add').val();
             let call = $('#buy-call').val();
-            var tmp = "";
-            tmp = tmp +  name + count + ads + call
-            $('#test_list').append(tmp);
+            let listcheck = "<tr> <td>" + name + "</td> <td>" + count + "</td> <td>" + ads + "</td> <td>" + call + "</td> </tr>";
+            $('#myTableData').append(listcheck);
         }
+
 
 
     </script>
@@ -97,80 +101,57 @@
                 <span class="price">가격 20,000원/개</span>
                 <p class="card-text">가족 혹은 친구들과 즐거운 시간을 보낼 수 있습니다.</p>
 
-                <table>
-                    <tr>
-                        <td>
-                            <div class="input-group mb-3">
+                <div class="input-group mb-3">
 
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">주문자이름</span>
-                                </div>
-
-                                <input type="text" id="buy-name" class="form-control" aria-label="Username">
-                        </td>
-                    </tr>
-
-            </div>
-
-            <tr>
-                <td>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">수량</span>
-                        </div>
-
-                        <select class="form-control" id="buy-count">
-                            <option value="">--수량을 선택하세요--</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">주문자이름</span>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">주소</span>
-                        </div>
-                        <input type="text" id="buy-add" class="form-control" aria-label="Address">
+
+                    <input type="text" id="buy-name" class="form-control" aria-label="Username">
+
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">수량</span>
                     </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">전화번호</span>
-                        </div>
-                        <input type="tel" class="form-control" id="buy-call" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 
+                    <select class="form-control" id="buy-count">
+                        <option value="">--수량을 선택하세요--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
 
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">주소</span>
                     </div>
-                </td>
-            </tr>
+                    <input type="text" id="buy-add" class="form-control" aria-label="Address">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">전화번호</span>
+                    </div>
+                    <input type="tel" class="form-control" id="buy-call" pattern="010-[0-9]{4}-[0-9]{4}">
+                </div>
 
-            </table>
+                <div class="but">
+                    <button class="btn btn-primary" onclick="inform();"> 주문하기 </button>
+                </div>
 
-            <div class="but">
-                <button type=button class="btn btn-primary" onclick="inform(); TestList();"> 주문하기 </button>
+                <div>
+                    <table id="myTableData">
+                        <tr>
+                            <td><b>이름</b></td>
+                            <td><b>수량</b></td>
+                            <td><b>주소</b></td>
+                            <td><b>전화번호</b></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-
-            <div id="mydata">
-                <table id="myTableData">
-                    <tr>
-                        <td><b>이름</b></td>
-                        <td><b>수량</b></td>
-                        <td><b>주소</b></td>
-                        <td><b>전화번호</b></td>
-                    </tr>
-                </table>
-            </div>
-            <ul id="test_list">
-
-            </ul>
         </div>
     </div>
     </div>
