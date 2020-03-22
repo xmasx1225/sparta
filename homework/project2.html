@@ -27,6 +27,7 @@
             text-align: center;
             margin: 10px;
         }
+
         .wrap {
             width: 500px;
         }
@@ -61,27 +62,20 @@
                 alert("전화번호를 입력해주세요");
                 $('#buy-call').focus();
                 return
-            } else if (!check.call) {
+            } else if (!check.test(call)) {
                 alert("010-0000-0000형식으로 입력해주세요");
                 $('#buy-call').focus();
             }
         }
-
-        function addRow() {
-            let name = $('#buy-name');
-            let count = $('#buy-count');
-            let ads = $('#buy-add');
-            let call = $('#buy-call');
-            
-            var rowCount = table.rows.length;
-            var row = table.insertRow(rowCount);
-
-            row.insertCell(0).innerHTML = name.value;
-            row.insertCell(1).innerHTML = count.value;
-            row.insertCell(2).innerHTML = ads.value;
-            row.insertCell(3).innerHTML = call.value;
+        function TestList() {
+            let name = $('#buy-name').val();
+            let count = $('#buy-count').val();
+            let ads = $('#buy-add').val();
+            let call = $('#buy-call').val();
+            var tmp = "";
+            tmp = tmp +  name + count + ads + call
+            $('#test_list').append(tmp);
         }
-
 
 
     </script>
@@ -151,7 +145,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">전화번호</span>
                         </div>
-                        <input type="tel" class="form-control" id="buy-call"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                        <input type="tel" class="form-control" id="buy-call" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 
 
                     </div>
@@ -161,7 +155,7 @@
             </table>
 
             <div class="but">
-                <button type=button class="btn btn-primary" onclick="inform(); addRow();">주문하기</button>
+                <button type=button class="btn btn-primary" onclick="inform(); TestList();"> 주문하기 </button>
             </div>
 
             <div id="mydata">
@@ -173,10 +167,10 @@
                         <td><b>전화번호</b></td>
                     </tr>
                 </table>
-                &nbsp;
-
             </div>
+            <ul id="test_list">
 
+            </ul>
         </div>
     </div>
     </div>
