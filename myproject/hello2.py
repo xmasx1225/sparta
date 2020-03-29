@@ -1,4 +1,4 @@
-import requests
+import requests 
 from bs4 import BeautifulSoup
 
 # URL을 읽어서 HTML를 받아오고,
